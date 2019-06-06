@@ -1,5 +1,5 @@
 
-# react-native-react-native-wheel
+# react-native-wheel
 
 ## Getting started
 
