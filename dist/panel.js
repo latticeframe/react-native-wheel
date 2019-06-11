@@ -18,6 +18,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var react_native_1 = require("react-native");
+var react_native_modal_1 = __importDefault(require("react-native-modal"));
 var index_1 = require("./index");
 var WheelPanel = /** @class */ (function (_super) {
     __extends(WheelPanel, _super);
@@ -42,7 +43,7 @@ var WheelPanel = /** @class */ (function (_super) {
         var _this = this;
         var optionGroup = this.props.options || [];
         var wheelViewList = optionGroup.map(function (option, index) { return (react_1.default.createElement(index_1.WheelView, { key: index, style: { width: 100 / optionGroup.length + "%" }, options: option, value: _this.props.value[index], onValueChange: _this.onValueChange(index) })); });
-        return (react_1.default.createElement(react_native_1.Modal, { animationType: 'fade', transparent: true, visible: this.state.visible },
+        return (react_1.default.createElement(react_native_modal_1.default, { style: { margin: 0 }, useNativeDriver: true, hideModalContentWhileAnimating: true, isVisible: this.state.visible },
             react_1.default.createElement(react_native_1.TouchableWithoutFeedback, { style: styles.mask, onPress: this.onHide },
                 react_1.default.createElement(react_native_1.View, { style: styles.mask })),
             this.props.title ? (react_1.default.createElement(react_native_1.Text, { style: styles.title }, this.props.title)) : null,
@@ -62,13 +63,13 @@ var styles = react_native_1.StyleSheet.create({
     },
     mask: {
         flexGrow: 1,
-        backgroundColor: '#3338',
     },
     title: {
         textAlign: 'center',
         lineHeight: 40,
         fontSize: 18,
         color: 'grey',
+        backgroundColor: '#fff',
     },
     container: {
         flexDirection: 'row',

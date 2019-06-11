@@ -1,5 +1,6 @@
 import React from 'react'
-import { Text, View, Modal, TouchableWithoutFeedback, StyleSheet } from 'react-native'
+import { Text, View, TouchableWithoutFeedback, StyleSheet } from 'react-native'
+import Modal from 'react-native-modal'
 import { WheelOptions, WheelView } from 'react-native-wheel'
 
 interface IState {
@@ -39,9 +40,9 @@ export class ExampleCustom extends React.PureComponent<object, IState> {
 
   maskDom() {
     return (
-      <Modal transparent={true} animationType='fade' visible={this.state.visible}>
+      <Modal style={{margin: 0}} isVisible={this.state.visible}>
         <View style={styles.mask}/>
-        <View style={styles.handle}>
+        <View style={[styles.content, styles.handle]}>
           <TouchableWithoutFeedback onPress={this.onHide}>
             <Text style={styles.cancelBtn}>取消</Text>
           </TouchableWithoutFeedback>
@@ -51,6 +52,7 @@ export class ExampleCustom extends React.PureComponent<object, IState> {
           </TouchableWithoutFeedback>
         </View>
         <WheelView
+          style={styles.content}
           options={this.state.options}
           value={this.state.tempValue}
           onValueChange={this.onValueChange}
@@ -75,7 +77,9 @@ export class ExampleCustom extends React.PureComponent<object, IState> {
 const styles = StyleSheet.create({
   mask: {
     flex: 1,
-    backgroundColor: '#3338',
+  },
+  content: {
+    backgroundColor: '#fff',
   },
   handle: { 
     flexDirection: 'row', 

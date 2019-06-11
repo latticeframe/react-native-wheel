@@ -1,11 +1,11 @@
 import React from 'react'
-import ReactNative, {
-  Modal,
+import {
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
   View,
 } from 'react-native'
+import Modal from 'react-native-modal'
 import { WheelView } from './index'
 import { WheelPanelProps } from '../typings'
 
@@ -45,7 +45,7 @@ export class WheelPanel  extends React.PureComponent<WheelPanelProps, IState> {
     ))
     
     return (
-      <Modal animationType='fade' transparent={true} visible={this.state.visible}>
+      <Modal style={{margin: 0}} useNativeDriver={true} hideModalContentWhileAnimating={true} isVisible={this.state.visible}>
         <TouchableWithoutFeedback style={styles.mask} onPress={this.onHide}>
           <View style={styles.mask} />
         </TouchableWithoutFeedback>
@@ -75,13 +75,13 @@ const styles = StyleSheet.create({
   },
   mask: {
     flexGrow: 1,
-    backgroundColor: '#3338',
   },
   title: {
     textAlign: 'center',
     lineHeight: 40,
     fontSize: 18,
     color: 'grey',
+    backgroundColor: '#fff',
   },
   container: {
     flexDirection: 'row',
