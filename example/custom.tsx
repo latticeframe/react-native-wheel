@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, TouchableWithoutFeedback, StyleSheet } from 'react-native'
 import Modal from 'react-native-modal'
-import { WheelOptions, WheelView } from 'react-native-wheel'
+import { WheelOptions, WheelView } from '@latticeframe/react-native-wheel'
 
 interface IState {
   options: WheelOptions

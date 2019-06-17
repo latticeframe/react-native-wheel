@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { WheelView, WheelOptions } from 'react-native-wheel'
+import { WheelView, WheelOptions } from '@latticeframe/react-native-wheel'
 
 interface IState {
   options: WheelOptions
