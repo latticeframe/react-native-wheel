@@ -1,15 +1,15 @@
 
-# react-native-wheel
+# @latticeframe/react-native-wheel
 
 ## Getting started
 
-**yarn**: `$ yarn add react-native-wheel`
+**yarn**: `yarn add @latticeframe/react-native-wheel`
 
-**npm**: `$ npm install react-native-wheel --save`
+**npm**: `npm install @latticeframe/react-native-wheel --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-wheel`
+`react-native link @latticeframe/react-native-wheel`
 
 ### Manual installation
 
@@ -20,12 +20,12 @@
   - Add `new RNWheelPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-    	include ':react-native-wheel'
-    	project(':react-native-wheel').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-wheel/android')
+    	include ':latticeframe_react-native-wheel'
+    	project(':latticeframe_react-native-wheel').projectDir = new File(rootProject.projectDir, 	'../node_modules/@latticeframe/react-native-wheel/android')
    ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
     ```
-      implementation project(':react-native-wheel')
+      implementation project(':latticeframe_react-native-wheel')
     ```
 
 ## Usage
