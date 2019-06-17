@@ -44,13 +44,63 @@ import { WheelPanel } from 'react-native-wheel';
 />
 ...
 ```
+#### Example
 [Base usage](./example/panel.tsx)
-[multi options usage](./example/panel-multi.tsx)
 
 ![base-usage-android](./assets/base-usage-android.gif) ![base-usage-ios](./assets/base-usage-ios.gif)
+
+[multi options usage](./example/panel-multi.tsx)
+#### Properties
+
+##### `style`
+Type: text styles
+
+Picker panel handle's style, or use children props replace it
+
+#### `visible`
+Type: boolean
+
+Picker panel is visible
+
+##### `title`
+Type: string
+
+Picker panel title
+
+##### `options`
+Type: `[[{label: string, value: string | number}]]`
+
+One or multip options
+
+##### `value`
+Type: `Array<string | number>`
+
+Current value
+
+##### `onValueChange`
+Type: `(value: Array<string | number>) => void`
 
 ### original wheel usage
 [original wheel usage](./example/view.tsx)
 
 ![original-wheel-usage-android](./assets/original-wheel-usage-android.gif) ![original-wheel-usage-ios](./assets/original-wheel-usage-ios.gif)
 
+#### Properties
+
+##### `style`
+Type: text styles
+
+Wheel's style
+
+##### `options`
+Type: `[{label: string, value: string | number}]`
+
+Wheel's options
+
+##### `value`
+Type: `string | number`
+
+Current value
+
+##### `onValueChange`
+Type: `(value: string | number) => void`
