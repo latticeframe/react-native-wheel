@@ -2,17 +2,17 @@ import React from 'react'
 import { StyleProp, ViewStyle } from 'react-native'
 
 interface Option {
-    label: string
-    value: React.ReactText
+  label: string
+  value: React.ReactText
 }
 
 type WheelOptions = Option[]
 
 interface WheelViewProps {
-    style?: StyleProp<ViewStyle>
-    options: WheelOptions
-    value: React.ReactText
-    onValueChange: (value: React.ReactText, index: number) => void
+  style?: StyleProp<ViewStyle>
+  options: WheelOptions
+  value: React.ReactText
+  onValueChange: (value: React.ReactText, index: number) => void
 }
 
 interface WheelPanelProps {

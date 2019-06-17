@@ -7,6 +7,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist",
+    "typings",
+    "android"
+  ],
   "keywords": [
     "react-native"
   ],
