@@ -18,14 +18,11 @@
   "author": "hong",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-native": "^0.59.8"
+    "react": "^16.0",
+    "react-native": ">=0.60 <0.62"
   },
   "devDependencies": {
-    "@types/react": "^16.8.19",
-    "@types/react-native": "^0.57.60"
-  },
-  "dependencies": {
-    "react-native-modal": "^11.0.1"
+    "@types/react": "^16.9.2",
+    "@types/react-native": "^0.60.13"
   }
 }

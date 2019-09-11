@@ -4,5 +4,3 @@ import { WheelViewIOS } from './wheel.ios'
 import { WheelViewAndroid } from './wheel.android'
 
 export const WheelView = (Platform.OS === 'ios' ? WheelViewIOS : WheelViewAndroid)
-
-export { WheelPanel } from './panel'
