@@ -8,7 +8,9 @@ const react_native_1 = require("react-native");
 const WheelView = react_native_1.requireNativeComponent('WheelViewAndroid');
 function WheelViewAndroid(props) {
     const onIndexChange = ({ nativeEvent: { index } }) => {
-        props.onValueChange(props.options[index].value, index);
+        if (props.options && props.options[index]) {
+            props.onValueChange(props.options[index].value, index);
+        }
     };
     const options = props.options || [];
     const index = options.findIndex((item) => item.value === props.value);

@@ -6,7 +6,9 @@ const WheelView = requireNativeComponent('WheelViewAndroid')
 
 export function WheelViewAndroid(props: WheelViewProps) {
   const onIndexChange = ({ nativeEvent: { index }}: { nativeEvent: { index: number }}) => {
-    props.onValueChange(props.options[index].value, index)
+    if (props.options && props.options[index]) {
+      props.onValueChange(props.options[index].value, index)
+    }
   }
   const options = props.options || []
   const index = options.findIndex((item) => item.value === props.value)
