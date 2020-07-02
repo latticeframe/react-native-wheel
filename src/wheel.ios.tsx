@@ -4,7 +4,7 @@ import { WheelViewProps } from '../typings'
 
 export function WheelViewIOS (props: WheelViewProps) {
   const options = props.options || []
-  const items = options.map(({label, value}) => (<Picker.Item key={value} label={label} value={value}/>))
+  const items = options.map(({label, value}) => (<Picker.Item key={value} color={props.color} label={label} value={value}/>))
   return (
     <Picker
       style={props.style}

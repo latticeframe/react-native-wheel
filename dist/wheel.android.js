@@ -14,6 +14,6 @@ function WheelViewAndroid(props) {
     };
     const options = props.options || [];
     const index = options.findIndex((item) => item.value === props.value);
-    return (react_1.default.createElement(WheelView, { style: [{ width: '100%', height: 261 }, props.style], items: props.options, index: index, onIndexChange: onIndexChange }));
+    return (react_1.default.createElement(WheelView, { style: [{ width: '100%', height: 261 }, props.style], color: props.color, items: props.options, index: index, onIndexChange: onIndexChange }));
 }
 exports.WheelViewAndroid = WheelViewAndroid;

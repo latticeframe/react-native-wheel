@@ -8,6 +8,7 @@ export interface WheelOption {
 
 export interface WheelViewProps {
   style?: StyleProp<ViewStyle>
+  color?: string
   options: WheelOption[]
   value: ReactText
   onValueChange: (value: React.ReactText, index: number) => void

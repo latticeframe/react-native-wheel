@@ -15,6 +15,7 @@ export function WheelViewAndroid(props: WheelViewProps) {
   return (
     <WheelView
       style={[{width: '100%', height: 261}, props.style]}
+      color={props.color}
       items={props.options}
       index={index}
       onIndexChange={onIndexChange}

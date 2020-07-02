@@ -1,5 +1,6 @@
 package com.reactlibrary;
 
+import android.graphics.Color;
 import android.view.Gravity;
 
 import com.contrarywind.listener.OnItemSelectedListener;
@@ -23,6 +24,7 @@ public class RNWheelManager extends SimpleViewManager<WheelView> {
 
     private static final String REACT_CLASS = "WheelViewAndroid";
 
+    private static final String PROP_COLOR = "color";
     private static final String PROP_INDEX = "index";
     private static final String PROP_ITEMS = "items";
     private static final String EVENT_NAME_ON_VALUE_CHANGE = "onIndexChange";
@@ -38,9 +40,6 @@ public class RNWheelManager extends SimpleViewManager<WheelView> {
         wheelView.setCyclic(false);
         wheelView.setLineSpacingMultiplier(2.5f);
         wheelView.setGravity(Gravity.CENTER);
-        wheelView.setTextColorOut(0xFFB4B4B4);
-        wheelView.setTextColorCenter(0xFF383838);
-        wheelView.setDividerColor(0xFFDFDFE0);
 
 
         wheelView.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -54,6 +53,21 @@ public class RNWheelManager extends SimpleViewManager<WheelView> {
             }
         });
         return wheelView;
+    }
+
+    @SuppressWarnings("unchecked")
+    @ReactProp(name = PROP_COLOR)
+    public void setColor(WheelView wheelView, String color) {
+      int textColor = Color.parseColor(color);
+      wheelView.setTextColorCenter(textColor);
+
+      float[] hsv = new float[3];
+      Color.colorToHSV(textColor, hsv);
+      float factor = hsv[2] > 0.5 ? -0.6f : 0.6f;
+      hsv[2] = Math.abs(hsv[2] + factor);
+      int lightColor = Color.HSVToColor(hsv);
+      wheelView.setTextColorOut(lightColor);
+      wheelView.setDividerColor(lightColor);
     }
 
     @SuppressWarnings("unchecked")
